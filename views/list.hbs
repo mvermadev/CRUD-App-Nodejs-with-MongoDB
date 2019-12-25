@@ -1,0 +1,58 @@
+    <style>
+        table{
+            text-align: center;;
+            border-radius: 40px;
+        }
+        table tr th, table tr td{
+            padding: 10px;
+        }
+        .allCrs{
+            display: flex;
+            flex-flow: row wrap;
+            justify-content:space-between;
+        }
+        .crs{
+            padding: 20px;
+            margin: 5px;
+            border-radius: 7px;
+            background-color: rgb(25, 128, 187);
+        }
+    </style>
+<h1 class="text-center mb-3">Courses</h1> <hr style="background-color: #ffffff;">
+
+{{!-- <table border="2px">
+    <tr>
+        <th>ID</th>
+        <th>NAME</th>
+    </tr>
+    {{#each data}}
+    <tr>
+        <td>{{this.courseId}}</td>
+        <td>{{this.courseName}}</td>
+    </tr>
+    {{/each}}
+     
+</table> --}}
+
+<div class="container mt-1">
+    <div class="allCrs">
+        
+        {{#each data}}
+    <div class="crs">
+        <p> {{this.courseId}}</p> <hr>
+        <h3> {{this.courseName}} </h3>
+        <p> Duration : {{this.courseDuration}} </p>
+        <p> Fee : {{this.courseFee}} </p>
+    </div>
+    {{/each}}
+    </div>
+</div>
+
+<div class="container mt-5 text-center">
+    <a href="/course/add" class="btn btn-light mt-4">Add New</a>
+    <a href="/course/update" class="btn btn-light mt-4">Update Course</a>
+    <a href="/course/delete" class="btn btn-light mt-4">Delete Course</a>
+</div>
+<div class="container mt-1 text-center">
+    <a href="/" class="btn btn-warning mt-4 btn-block">HOME</a>
+</div>
